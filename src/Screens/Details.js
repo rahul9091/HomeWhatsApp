@@ -16,7 +16,6 @@ const Details = (props) => {
     console.log(props)
     const { image, title } = props.route.params;
     const navTitleView = useRef(null);
-    console.log(title)
     return (
         <View style={{ flex: 1 }}>
             <StatusBar style={{height:3}} barStyle="light-content" backgroundColor="#73BEB7" />

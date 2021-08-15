@@ -18,3 +18,10 @@ export const inputMsg = (input) => {
         payload:input
     })
 }
+
+export const image = (source) => {
+    dispatch({
+        type:types.IMAGE,
+        payload:source
+    })
+}

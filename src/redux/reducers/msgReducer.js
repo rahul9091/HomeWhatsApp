@@ -24,7 +24,7 @@ const initialState={
       msg:"Kya haal ha exam kaisa",
       count:0,
       date:`0${month}/${year}`,
-      chatMsg:[{id:'2',str:['Hello Friend'],tick:'https://www.pikpng.com/pngl/m/426-4263822_blue-double-ticks-whatsapp-blue-tick-png-clipart.png',date:`0${month}/${year}`,time:`${hours}:${min}`,type:typeFlag ? 'sender' : 'reciever'}],
+      chatMsg:[{id:'2',str:['Hello Friend','how are you'],tick:'https://www.pikpng.com/pngl/m/426-4263822_blue-double-ticks-whatsapp-blue-tick-png-clipart.png',date:`0${month}/${year}`,time:`${hours}:${min}`,type:typeFlag ? 'sender' : 'reciever'}],
       image:"https://tse2.mm.bing.net/th?id=OIP.aklZ0iWGHmSVx-Dwaaq8mwHaGq&pid=Api&P=0&w=185&h=167",
     },
     {
@@ -111,6 +111,10 @@ export default function msgReducer (state=initialState,action){
       ...state
     }
 
+  case ActionTypes.IMAGE:
+    // const source = action.payload;
+    // console.log(source ,'source in reducer')
+
    case ActionTypes.INPUT:
      const input = action.payload;
      console.log(input ,'input got in reducer')
@@ -118,8 +122,7 @@ export default function msgReducer (state=initialState,action){
 
     console.log(typeFlag,'typeFlage changed in reducer then will update')
 
-    
-    console.log(state.contactArr[1].chatMsg[0].str,'infor looooooop')
+  
      for(var i=0;i<state.contactArr.length;i++){
       
       if(state.contactArr[i].id == state.idCh){

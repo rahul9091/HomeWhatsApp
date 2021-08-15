@@ -1,4 +1,5 @@
 export default {
     CHATDATA:'CHATDATA',
-    INPUT:'INPUT'
+    INPUT:'INPUT',
+    IMAGE:'IMAGE'
 }

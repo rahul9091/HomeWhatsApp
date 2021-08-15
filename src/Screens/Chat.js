@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View,FlatList,StyleSheet ,Image, TouchableOpacity} from 'react-native'
+import { Text, View,FlatList,StyleSheet ,Image, TouchableOpacity,TextInput} from 'react-native'
 import { Avatar,HStack, Center, NativeBaseProvider, theme } from 'native-base';
 import {connect} from 'react-redux';
 import actions from '../redux/actions';
@@ -83,7 +83,8 @@ import actions from '../redux/actions';
                     msgHistory:[{type:'send'}]
                   },
               ],
-              flag:true
+              flag:true,
+              query:''
         }
     }
 
@@ -141,6 +142,30 @@ import actions from '../redux/actions';
         }
         console.log(cont,'cont lets seeee')
     }
+
+    renderHeader = () => {
+        const {query} = this.state;
+        return (
+            <View
+        style={{
+        //   backgroundColor: '#fff',
+          padding: 10,
+          marginVertical: 10,
+          borderRadius: 20
+        }}
+      >
+        <TextInput
+          autoCapitalize="none"
+          autoCorrect={false}
+          clearButtonMode="always"
+          value={query}
+        //   onChangeText={queryText => handleSearch(queryText)}
+          placeholder="Search"
+          style={{ backgroundColor: '#fff', paddingHorizontal: 20 }}
+        />
+      </View>
+        )
+    }
     
 
     render() {
@@ -163,11 +188,13 @@ import actions from '../redux/actions';
                 </TouchableOpacity>
                 {flagR ? 
               <FlatList
+              // ListHeaderComponent={this.renderHeader}
               data={msgArray}
               keyExtractor={(item)=>item.id}
               renderItem={this.renderItem}
               />:    
               <FlatList
+              // ListHeaderComponent={this.renderHeader}
             data={array}
             keyExtractor={(item)=>item.id}
             renderItem={this.renderItem}

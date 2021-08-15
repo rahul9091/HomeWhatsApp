@@ -6,6 +6,7 @@ import TopTab from './TopTab'
 import Msg from '../Screens/Msg';
 import Contacts from '../Screens/Contacts';
 import actions from '../redux/actions';
+import Details from '../Screens/Details';
 
 export default function(){
     const Stack = createStackNavigator()
@@ -31,6 +32,7 @@ export default function(){
              />
              <Stack.Screen name="msg" component={Msg} options={{headerShown:false}} />
              <Stack.Screen name="Contacts" component={Contacts}/>
+             <Stack.Screen name="Details" component={Details} options={{headerShown:false}}/>
         </Fragment>
     )
 }
